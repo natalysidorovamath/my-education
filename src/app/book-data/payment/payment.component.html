@@ -1,0 +1,28 @@
+<div class="ui-g">
+  <span class="ui-g-12 ui-md-12">
+    <h4>Введите данные для таблицы</h4>
+  </span>
+</div>
+<div class="ui-g">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <span class="ui-g-12 ui-md-12">
+      <div class="p-inputgroup">
+        <label>Номер</label>
+        <input type="number" pInputText name="number" ngModel required pattern="^[1-9]+[0-9]*$" />
+        <label>Наименования</label>
+        <input type="text" pInputText name="name" ngModel required />
+        <label>Цена</label>
+        <input type="number" pInputText name="price" ngModel required pattern="^[1-9]+[0-9]*$" />
+        <label>Скидка</label>
+        <input type="number" pInputText name="discount" ngModel required pattern="^[1-9]+[0-9]*$" />
+      </div>
+      <div class="p-inputgroup">
+      </div>
+
+    </span>
+    <div class="p-inputgroup">
+      <button pButton type="submit" label="Сохранить данные" [disabled]="!f.valid"></button>
+    </div>
+
+  </form>
+</div>
